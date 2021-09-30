@@ -5,18 +5,14 @@ metadata:
   generateName: wget-taskrun-
 spec: 
   params: 
-    - 
-      name: url
+    - name: url
       value: www.google.com
-    - 
-      name: diroptions
+    - name: diroptions
       value: 
         - "-P"
   taskRef: 
     kind: Task
     name: wget
   workspaces: 
-    - 
-      emptyDir: {}
+    - emptyDir: {}
       name: wget-workspace
-
