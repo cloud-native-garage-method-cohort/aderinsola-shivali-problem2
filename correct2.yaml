@@ -1,0 +1,27 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: pacman
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: pacman
+  template: 
+    metadata: 
+      labels: 
+        app: pacman
+    spec: 
+      containers: 
+        - 
+          env: 
+            - 
+              name: MESSAGE
+              value: "Welcome to my brand new K8s cluster running on Azure ! AKS !"
+          image: "chrisley75/pacman:v1"
+          name: pacman
+          ports: 
+            - 
+              containerPort: 80
+
